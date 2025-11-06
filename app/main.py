@@ -9,8 +9,7 @@ from .config import settings
 from app.config import settings  
 import secrets, string
 from sqlalchemy.exc import IntegrityError
-from app.init_db import init_db
-init_db()
+
 
 models.Base.metadata.create_all(bind=engine)
 SECRET_KEY = settings.SECRET_KEY
