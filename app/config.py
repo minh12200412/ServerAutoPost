@@ -1,6 +1,9 @@
-# app/config.py
 import os
-from pydantic_settings import BaseSettings 
+from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+
+# Chỉ load file .env khi chạy local
+load_dotenv()
 
 class Settings(BaseSettings):
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./licenses.db")
